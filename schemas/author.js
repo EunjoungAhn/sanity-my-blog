@@ -7,6 +7,7 @@ export default {
       name: 'name',
       title: 'Name',
       type: 'string',
+      //내용을 꼭 넣기위한 설정
       validation: Rule => Rule.required(),
     },
     {

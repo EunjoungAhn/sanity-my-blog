@@ -7,8 +7,10 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => Rule.required(),
     },
     {
+      //url을 사용할때 쓰는 것 (Title 기준)
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -18,10 +20,29 @@ export default {
       },
     },
     {
+      name: 'subtitle',
+      title: 'Sub Title',
+      type: 'string',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'author',
       title: 'Author',
       type: 'reference',
       to: {type: 'author'},
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'content',
+      title: 'Content',
+      type: 'blockContent',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'createdAt',
+      title: 'Created at',
+      type: 'datetime',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'mainImage',
@@ -30,22 +51,25 @@ export default {
       options: {
         hotspot: true,
       },
+      file: [
+        {
+          name: 'alt',
+          title: 'alt',
+          type: 'string',
+          options: {
+            isHighlighted: true,
+            validation: Rule => Rule.required(),
+          },
+        },
+      ],
+      validation: Rule => Rule.required(),
     },
     {
-      name: 'categories',
-      title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-    },
-    {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    },
-    {
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      name: 'tag',
+      title: 'Tag',
+      type: 'reference',
+      to: {type: 'tag'},
+      validation: Rule => Rule.required(),
     },
   ],
 
