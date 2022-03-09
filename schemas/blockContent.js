@@ -64,10 +64,38 @@ export default {
     {
       type: 'image',
       options: {hotspot: true},
+      //기존 이미지에 caption과 alt를 추가하기
+      fields: [
+        {
+            name: 'caption',
+            title: 'Caption',
+            type: 'string',
+            options: {
+              isHighlighted: true,
+            },
+        },
+        {
+          name: 'alt',
+          title: 'alt',
+          type: 'string',
+          options: {
+            isHighlighted: true,
+          },
+          validation: Rule => Rule.required(),
+      },
+      ],
     },
     {
       type: 'video',
-      options: {hotspot: true},
+    },
+    {
+      type: 'code',
+    },
+    {
+      type: 'link',
+    },
+    {
+      type: 'imageGallery',
     },
   ],
 }
