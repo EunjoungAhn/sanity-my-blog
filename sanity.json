@@ -1,17 +1,18 @@
 {
   "root": true,
+  "api": {
+    "projectId": "xen9ujpt",
+    "dataset": "production"
+  },
   "project": {
     "name": "nextjs-blog"
-  },
-  "api": {
-    "projectId": "lzhye135",
-    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "url-metadata-input"
   ],
   "env": {
     "development": {

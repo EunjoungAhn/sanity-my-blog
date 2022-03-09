@@ -1,7 +1,7 @@
 export default {
   name: 'home',
   title: 'Home',
-  type: 'documetn',
+  type: 'document',
   fields: [
     {
       name: 'title',
@@ -12,16 +12,15 @@ export default {
     {
       name: 'mainPost',
       title: 'Main Post',
-      type: 'reference',
-      //reference에 어떤 객체를 넣을 것인지 설정
-      to:{ type: "post" },
+      type: 'string',
+      to: {type: 'post'},
       validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
       title: 'title',
-      subtitle: 'mainPost.title'
+      author: 'mainPost.title',
     },
   },
 };
